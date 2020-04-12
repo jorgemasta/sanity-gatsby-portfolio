@@ -132,14 +132,14 @@ const IndexPage = props => {
           <BlogPostPreviewList
             title='Latest blog posts'
             nodes={postNodes}
-            browseMoreHref='/archive/'
+            browseMoreHref='/blog/'
           />
         )}
         {projectNodes && (
           <ProjectPreviewGrid
             title='Latest projects'
             nodes={projectNodes}
-            browseMoreHref='/archive/'
+            browseMoreHref='/portfolio/'
           />
         )}
       </Container>
