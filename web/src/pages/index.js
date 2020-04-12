@@ -9,6 +9,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPostPreviewList from '../components/blog-post-preview-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
+import Introduction from '../components/introduction'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
@@ -40,6 +41,10 @@ export const query = graphql`
       subtitle
       description
       keywords
+    }
+    homepage: sanityHomepage(_id: {regex: "/(drafts.|)homepage/"}) {
+      title
+      description: _rawDescription
     }
     posts: allSanityPost(
       limit: 3
@@ -97,6 +102,7 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site
+  const homepage = (data || {}).homepage
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
       .filter(filterOutDocsWithoutSlugs)
@@ -118,6 +124,10 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
+        <Introduction
+          title={homepage.title}
+          description={homepage.description}
+        />
         {postNodes && (
           <BlogPostPreviewList
             title='Latest blog posts'

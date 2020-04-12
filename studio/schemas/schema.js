@@ -10,6 +10,7 @@ import person from './documents/person'
 import sampleProject from './documents/sampleProject'
 import siteSettings from './documents/siteSettings'
 import post from './documents/post'
+import homepage from './documents/homepage'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -34,6 +35,7 @@ export default createSchema({
     simplePortableText,
     // The following are document types which will appear
     // in the studio.
+    homepage,
     category,
     person,
     sampleProject,
