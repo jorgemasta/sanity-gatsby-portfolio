@@ -13,6 +13,10 @@
   position: relative;
   background: var(--color-very-light-gray);
   padding-bottom: calc(9 / 16 * 100%);
+  @media (--media-min-medium) {
+    padding-bottom: 0;
+    height: 50vh;
+  }
 
   @nest & img {
     display: block;
