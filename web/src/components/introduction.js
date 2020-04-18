@@ -3,7 +3,6 @@ import BlockContent from './block-content'
 import styles from './introduction.module.css'
 
 function Introduction (props) {
-  console.log(props.description)
   return (
     <div className={styles.root}>
       {props.title && <h1>{props.title}</h1>}
