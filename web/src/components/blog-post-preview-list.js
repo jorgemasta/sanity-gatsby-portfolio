@@ -1,10 +1,12 @@
 import {Link} from 'gatsby'
 import React from 'react'
+import {isEmpty} from 'lodash'
 import BlogPostPreview from './blog-post-preview'
 
 import styles from './blog-post-preview-list.module.css'
 
 function BlogPostPreviewGrid (props) {
+  if (isEmpty(props.nodes)) return null
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
