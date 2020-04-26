@@ -5,7 +5,7 @@
 }
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: responsiveTitle1 from "./typography.module.css";
 }
 
 .leadMediaThumb {
@@ -27,6 +27,7 @@
   @media (hover: hover) {
     @nest .root:hover & {
       text-decoration: underline;
+      text-decoration-color: var(--color-accent);
     }
   }
 }

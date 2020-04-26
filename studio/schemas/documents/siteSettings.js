@@ -15,6 +15,11 @@ export default {
       title: 'Title'
     },
     {
+      name: 'metaTitle',
+      type: 'string',
+      title: 'Meta Title'
+    },
+    {
       name: 'description',
       type: 'text',
       title: 'Description',

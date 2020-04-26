@@ -9,13 +9,14 @@ function SEO ({description, lang, meta, keywords, title}) {
       query={detailsQuery}
       render={data => {
         const metaDescription = description || (data.site && data.site.description) || ''
-        const siteTitle = (data.site && data.site.title) || ''
+        const siteTitle = (data.site && data.site.metaTitle) || ''
+        const actualTitle = (data.site && data.site.title) || ''
         const siteAuthor = (data.site && data.site.author && data.site.author.name) || ''
         return (
           <Helmet
             htmlAttributes={{lang}}
-            title={title}
-            titleTemplate={title === siteTitle ? '%s' : `%s | ${siteTitle}`}
+            title={title === actualTitle ? siteTitle : title}
+            titleTemplate={title === siteTitle || title === actualTitle ? '%s' : `%s | ${siteTitle}`}
             meta={[
               {
                 name: 'description',
@@ -86,6 +87,7 @@ const detailsQuery = graphql`
   query DefaultSEOQuery {
     site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
+      metaTitle
       description
       keywords
       author {
