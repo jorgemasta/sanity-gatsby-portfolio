@@ -1,7 +1,6 @@
 import {Link} from 'gatsby'
 import React from 'react'
-/* import Icon from './icon'
-import {cn} from '../lib/helpers' */
+import Icon from './icon'
 
 import styles from './header.module.css'
 
@@ -12,17 +11,15 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
         <Link to='/' className={styles.zigzag}><span>{siteTitle}</span></Link>
       </div>
 
-      {/*       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol='hamburger' />
-      </button>
-
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
-        <ul>
-          <li>
-            <Link to='/archive/'>Archive</Link>
-          </li>
-        </ul>
-      </nav> */}
+      <a className={styles.socialLink} href='https://twitter.com/jorgemasta' aria-label='Visit my Twitter'>
+        <Icon symbol='twitter' />
+      </a>
+      <a className={styles.socialLink} href='https://dev.to/jorgemasta' aria-label='Visit my Dev.to'>
+        <Icon symbol='dev' />
+      </a>
+      <a className={styles.socialLink} href='https://github.com/jorgemasta' aria-label='Visit my GitHub'>
+        <Icon symbol='github' />
+      </a>
     </div>
   </div>
 )

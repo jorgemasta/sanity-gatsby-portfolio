@@ -39,23 +39,20 @@
   }
 }
 
-.toggleNavButton {
-  appearance: none;
-  font-size: 25px;
+.socialLink {
+  font-size: 24px;
   border: none;
   background: none;
   margin: 0;
   padding: calc(14 / 17 / 2 * 1rem);
-  outline: none;
-  color: inherit;
+  color: var(--color-black);
 
   & svg {
     display: block;
     fill: inherit;
   }
-
-  @media (--media-min-small) {
-    display: none;
+  @nest &:hover svg {
+    fill: var(--color-accent);
   }
 }
 
